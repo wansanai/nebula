@@ -47,6 +47,8 @@ Rust unit and async tests use the built-in framework with `#[test]` and `#[tokio
 
 Follow Conventional Commits, as in `feat(vendors): add UPYUN as a new provider`, `fix(accounts): ...`, or `docs(release): ...`. Use a concise imperative subject and include behavioral rationale when non-obvious.
 
+The upstream repository does not carry local agent/process documentation such as `AGENTS.md`, `CONTEXT.md`, and `docs/adr/**`. Split every change that touches both code and documentation into a code commit followed by a `docs(...)` commit: the code commit carries implementation, configuration, and tests, while the documentation commit carries `AGENTS.md`, `CONTEXT.md`, `docs/**`, `PLAN.md`, and any other documentation or agent-context notes. This keeps the code commit applicable upstream on its own and the documentation commit separable.
+
 Pull requests should describe the change, link related issues, and state completed verification commands. UI changes benefit from screenshots or short recordings; provider changes should identify the exact SDK/API path and any compatibility limits.
 
 ## Security and Configuration
